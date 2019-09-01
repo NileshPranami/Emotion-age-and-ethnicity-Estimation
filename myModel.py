@@ -20,7 +20,7 @@ class SeparableConvolutionLayer(torch.nn.Module):
 class SeparableConvolutionModel(torch.nn.Module):
     """ Implementation of CNN based on depthwise separable convolution layer """
 
-    def __init__(self, dropout=0.7, n_class=7, n_channels=1, n_filters=[64, 128, 256, 512], kernels_size=[3, 3, 3, 3]):
+    def __init__(self, dropout=0.6 or 0.7, n_class=7, n_channels=1, n_filters=[64, 128, 256, 512], kernels_size=[3, 3, 3, 3]):
         """
         The model consists of 4 CNN blocks. Each i-th block is a set of 2 depthwise separable conv layers.
          Each layer in the i-th block has kernel size given by the i-th element from `kernels_size` parameter,
